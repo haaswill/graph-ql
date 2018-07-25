@@ -17,6 +17,8 @@ class SongCreate extends Component {
     this.props.mutate({
       variables: { title: this.state.title },
       // tells apollo to refetch data explicitly
+      //
+      // using refetchQueries because SongCreate has no idea about query -- only binded to the mutation
       refetchQueries: [{ query }]
     }).then(() => hashHistory.push('/'));
   }
