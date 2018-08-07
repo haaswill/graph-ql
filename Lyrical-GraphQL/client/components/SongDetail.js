@@ -22,5 +22,6 @@ class SongDetail extends Component {
 
 export default graphql(fetchSong, {
   // since props are passed to graphql, graphql has access to it before passing it down to the component it's wrapping(in this case SongDetail)
+  // params from React Router
   options: (props) => { return { variables: { id: props.params.id } } }
 })(SongDetail);
