@@ -82,3 +82,17 @@ function login({ email, password, req }) {
 }
 
 module.exports = { signup, login };
+
+
+// Decoupled approach
+// First makes authentication with Passport
+// Bad side: Components that use only Passport as well as components that only use GraphQL
+// Bad side: Splits React App
+
+
+
+// Coupled approach
+// Using GraphQL the way it was developed to be used
+// App only interacts with GraphQL while GraphQL manages external resources
+//
+// Bad side: GraphQL and Passport were not made to work together
